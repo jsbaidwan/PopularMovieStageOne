@@ -19,7 +19,11 @@ public class MainActivityFragment extends Fragment {
     private ImageAdapter movieImageAdapter;
 
     Movie [] movieData = {
+            new Movie(R.drawable.a),
+            new Movie(R.drawable.a),
+            new Movie(R.drawable.a),
             new Movie(R.drawable.a)
+
 
 
     };

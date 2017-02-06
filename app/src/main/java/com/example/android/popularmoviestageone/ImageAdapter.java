@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,12 +17,16 @@ import java.util.List;
  */
 public class ImageAdapter extends ArrayAdapter<Movie> {
 
+    List<Movie> list;
+
     private static final String LOG_TAG = ImageAdapter.class.getSimpleName();
 
     /* Constructor to instantiate ImageAdpater   */
     public ImageAdapter(Activity context, List<Movie> movieList)    {
-
         super(context, 0, movieList);
+        list = new ArrayList<>();
+        list = movieList;
+
     }
 
     /* Return number of cells*/
@@ -35,7 +40,7 @@ public class ImageAdapter extends ArrayAdapter<Movie> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_movie, parent, false);
        }
         ImageView moviePoster = (ImageView) convertView.findViewById(R.id.list_item_movieImage);
-        moviePoster.setImageResource(Movie.image);
+        moviePoster.setImageResource(list.get(0).image);
         return convertView;
     }
 }
